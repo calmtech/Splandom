@@ -1,0 +1,370 @@
+[
+	{
+		"id": 7,
+		"key": "port_mackerel",
+		"localization": {
+			"de": "Heilbutt-Hafen",
+			"en": "Port Mackerel",
+			"es-419": "Puerto Jurel",
+			"es-es": "Puerto Jurel",
+			"fr-ca": "Docks Haddock",
+			"fr-fr": "Docks Haddock",
+			"it": "Porto Polpo",
+			"ja": "ホッケふ頭",
+			"nl": "Hamerhaaihaven",
+			"ru": "Порт «Корюшка"
+		}
+	},
+	{
+		"id": 8,
+		"key": "moray_towers",
+		"localization": {
+			"de": "Muränentürme",
+			"en": "Moray Towers",
+			"es-419": "Torres Merluza",
+			"es-es": "Torres Merluza",
+			"fr-ca": "Tours Girelle",
+			"fr-fr": "Tours Girelle",
+			"it": "Torri cittadine",
+			"ja": "タチウオパーキング",
+			"nl": "Tonijntorens",
+			"ru": "Муренские башн"
+		}
+	},
+	{
+		"id": 0,
+		"key": "the_reef",
+		"localization": {
+			"de": "Korallenviertel",
+			"en": "The Reef",
+			"es-419": "Barrio Congrio",
+			"es-es": "Barrio Congrio",
+			"fr-ca": "Allées salées",
+			"fr-fr": "Allées salées",
+			"it": "Rione Storione",
+			"ja": "バッテラストリート",
+			"nl": "Sushistraat",
+			"ru": "Ри"
+		}
+	},
+	{
+		"id": 1,
+		"key": "musselforge_fitness",
+		"localization": {
+			"de": "Molluskelbude",
+			"en": "Musselforge Fitness",
+			"es-419": "Gimnasio Mejillón",
+			"es-es": "Gimnasio Mejillón",
+			"fr-ca": "Gymnase Ancrage",
+			"fr-fr": "Gymnase Ancrage",
+			"it": "Centro polpisportivo",
+			"ja": "フジツボスポーツクラブ",
+			"nl": "Vinvis Fitness",
+			"ru": "Спортзал «Кревед!"
+		}
+	},
+	{
+		"id": 2,
+		"key": "starfish_mainstage",
+		"localization": {
+			"de": "Seeigel-Rockbühne",
+			"en": "Starfish Mainstage",
+			"es-419": "Auditorio Erizo",
+			"es-es": "Auditorio Erizo",
+			"fr-ca": "Scène Sirène",
+			"fr-fr": "Scène Sirène",
+			"it": "Palco Plancton",
+			"ja": "ガンガゼ野外音楽堂",
+			"nl": "Zeesterrenstage",
+			"ru": "КЗ «Иглокожий"
+		}
+	},
+	{
+		"id": 3,
+		"key": "sturgeon_shipyard",
+		"localization": {
+			"de": "Störwerft",
+			"en": "Sturgeon Shipyard",
+			"es-419": "Astillero Beluga",
+			"es-es": "Astillero Beluga",
+			"fr-ca": "Chantier Narval",
+			"fr-fr": "Chantier Narval",
+			"it": "Cantiere Pinnenere",
+			"ja": "チョウザメ造船",
+			"nl": "Walruswerf",
+			"ru": "Осетровые верф"
+		}
+	},
+	{
+		"id": 4,
+		"key": "inkblot_art_academy",
+		"localization": {
+			"de": "Perlmutt-Akademie",
+			"en": "Inkblot Art Academy",
+			"es-419": "Instituto Coralino",
+			"es-es": "Instituto Coralino",
+			"fr-ca": "Institut Calmarts",
+			"fr-fr": "Institut Calamarts",
+			"it": "Campus Hippocampus",
+			"ja": "海女美術大学",
+			"nl": "Koraalcampus",
+			"ru": "Академия «Лепота"
+		}
+	},
+	{
+		"id": 5,
+		"key": "humpback_pump_track",
+		"localization": {
+			"de": "Buckelwal-Piste",
+			"en": "Humpback Pump Track",
+			"es-419": "Tiburódromo",
+			"es-es": "Tiburódromo",
+			"fr-ca": "Piste Méroule",
+			"fr-fr": "Piste Méroule",
+			"it": "Tintodromo Montecarpa",
+			"ja": "コンブトラック",
+			"nl": "Lekkerbektrack",
+			"ru": "Велозал «9-й вал"
+		}
+	},
+	{
+		"id": 6,
+		"key": "manta_maria",
+		"localization": {
+			"de": "Manta Maria",
+			"en": "Manta Maria",
+			"es-419": "Corbeta Corvina",
+			"es-es": "Corbeta Corvina",
+			"fr-ca": "Manta Maria",
+			"fr-fr": "Manta Maria",
+			"it": "Manta Maria",
+			"ja": "マンタマリア号",
+			"nl": "Klipvisklipper",
+			"ru": "«Манта-Мария"
+		}
+	},
+	{
+		"id": 9,
+		"key": "snapper_canal",
+		"localization": {
+			"de": "Grätenkanal",
+			"en": "Snapper Canal",
+			"es-419": "Canal Cormorán",
+			"es-es": "Canal Cormorán",
+			"fr-ca": "Canalmar",
+			"fr-fr": "Canalamar",
+			"it": "Canale Cannolicchio",
+			"ja": "エンガワ河川敷",
+			"nl": "Moeraalkanaal",
+			"ru": "Подмостовь"
+		}
+	},
+	{
+		"id": 10,
+		"key": "kelp_dome",
+		"localization": {
+			"de": "Tümmlerkuppel",
+			"en": "Kelp Dome",
+			"es-419": "Jardín botánico",
+			"es-es": "Jardín botánico",
+			"fr-ca": "Serre Goémon",
+			"fr-fr": "Serre Goémon",
+			"it": "Serra di alghe",
+			"ja": "モズク農園",
+			"nl": "Kelpwierkas",
+			"ru": "Ферма ламинари"
+		}
+	},
+	{
+		"id": 11,
+		"key": "blackbelly_skatepark",
+		"localization": {
+			"de": "Punkasius-Skatepark",
+			"en": "Blackbelly Skatepark",
+			"es-419": "Parque Lubina",
+			"es-es": "Parque Lubina",
+			"fr-ca": "Plancho Mako",
+			"fr-fr": "Skatepark Mako",
+			"it": "Pista Polposkate",
+			"ja": "Bバスパーク",
+			"nl": "Snoekduik-skatepark",
+			"ru": "Скейт-парк «Скат"
+		}
+	},
+	{
+		"id": 12,
+		"key": "shellendorf_institute",
+		"localization": {
+			"de": "Abyssal-Museum",
+			"en": "Shellendorf Institute",
+			"es-419": "Galería Raspa",
+			"es-es": "Galería Raspa",
+			"fr-ca": "Galerie des abysses",
+			"fr-fr": "Galerie des abysses",
+			"it": "Museo paleontonnologico",
+			"ja": "デボン海洋博物館",
+			"nl": "Vistorisch museum",
+			"ru": "Музей «Мезозой"
+		}
+	},
+	{
+		"id": 13,
+		"key": "makomart",
+		"localization": {
+			"de": "Cetacea-Markt",
+			"en": "MakoMart",
+			"es-419": "Ultramarinos Orca",
+			"es-es": "Ultramarinos Orca",
+			"fr-ca": "Supermarché Cétacé",
+			"fr-fr": "Supermarché Cétacé",
+			"it": "Mercatotano",
+			"ja": "ザトウマーケット",
+			"nl": "Bultrugbazaar",
+			"ru": "«Горбуша-Маркет"
+		}
+	},
+	{
+		"id": 14,
+		"key": "walleye_warehouse",
+		"localization": {
+			"de": "Kofferfisch-Lager",
+			"en": "Walleye Warehouse",
+			"es-419": "Almacén Rodaballo",
+			"es-es": "Almacén Rodaballo",
+			"fr-ca": "Encrepôt",
+			"fr-fr": "Encrepôt",
+			"it": "Magazzino",
+			"ja": "ハコフグ倉庫",
+			"nl": "Zeeleeuwloods",
+			"ru": "Инкрабскла"
+		}
+	},
+	{
+		"id": 15,
+		"key": "arowana_mall",
+		"localization": {
+			"de": "Arowana-Center",
+			"en": "Arowana Mall",
+			"es-419": "Plazuela del Calamar",
+			"es-es": "Plazuela del Calamar",
+			"fr-ca": "Centre Arowana",
+			"fr-fr": "Centre Arowana",
+			"it": "Centro commerciale",
+			"ja": "アロワナモール",
+			"nl": "Piranha Plaza",
+			"ru": "Тц «Аравана"
+		}
+	},
+	{
+		"id": 16,
+		"key": "camp_triggerfish",
+		"localization": {
+			"de": "Camp Schützenfisch",
+			"en": "Camp Triggerfish",
+			"es-419": "Campamento Arowana",
+			"es-es": "Campamento Arowana",
+			"fr-ca": "Hippo-Camping",
+			"fr-fr": "Hippo-Camping",
+			"it": "Campeggio Totan",
+			"ja": "モンガラキャンプ場",
+			"nl": "Kamp Karper",
+			"ru": "База «Спинорог"
+		}
+	},
+	{
+		"id": 17,
+		"key": "piranha_pit",
+		"localization": {
+			"de": "Steinköhler-Grube",
+			"en": "Piranha Pit",
+			"es-419": "Cantera Tintorera",
+			"es-es": "Cantera Tintorera",
+			"fr-ca": "Carrières Caviar",
+			"fr-fr": "Carrière Caviar",
+			"it": "Miniera dOrata",
+			"ja": "ショッツル鉱山",
+			"nl": "Grondelgroeve",
+			"ru": "Пираньев карье"
+		}
+	},
+	{
+		"id": 18,
+		"key": "goby_arena",
+		"localization": {
+			"de": "Backfisch-Stadion",
+			"en": "Goby Arena",
+			"es-419": "Estadio Ajolote",
+			"es-es": "Estadio Ajolote",
+			"fr-ca": "Stade Bernique",
+			"fr-fr": "Stade Bernique",
+			"it": "Arena Sardina",
+			"ja": "アジフライスタジアム",
+			"nl": "Planktonstadion",
+			"ru": "Арена «Лужа"
+		}
+	},
+	{
+		"id": 19,
+		"key": "new_albacore_hotel",
+		"localization": {
+			"de": "Hotel Neothun",
+			"en": "New Albacore Hotel",
+			"es-419": "Gran Hotel Caviar",
+			"es-es": "Gran Hotel Caviar",
+			"fr-ca": "Hôtel Atoll",
+			"fr-fr": "Hôtel Atoll",
+			"it": "Hotel Tellina",
+			"ja": "ホテルニューオートロ",
+			"nl": "Hotel de Keizersvis",
+			"ru": "Отель «Прибой"
+		}
+	},
+	{
+		"id": 20,
+		"key": "wahoo_world",
+		"localization": {
+			"de": "Flunder-Funpark",
+			"en": "Wahoo World",
+			"es-419": "Pirañalandia",
+			"es-es": "Pirañalandia",
+			"fr-ca": "Parc Carapince",
+			"fr-fr": "Parc Carapince",
+			"it": "Soglioland",
+			"ja": "スメーシーワールド",
+			"nl": "Waterwonderland",
+			"ru": "Луна-парк «Язь"
+		}
+	},
+	{
+		"id": 21,
+		"key": "anchov_games",
+		"localization": {
+			"de": "Anchobit Games HQ",
+			"en": "Ancho-V Games",
+			"es-419": "Estadio Ajolote",
+			"es-es": "Estadio Ajolote",
+			"fr-ca": "Tentatec Studio",
+			"fr-fr": "Tentatec Studio",
+			"it": "Acciugames",
+			"ja": "アンチョビットゲームズ",
+			"nl": "Ansjobit-gamestudio",
+			"ru": "«Гуппи-Геймдев"
+		}
+	},
+	{
+		"id": 22,
+		"key": "skipper_pavilion",
+		"localization": {
+			"de": "Grundel-Pavillon",
+			"en": "Skipper Pavilion",
+			"es-419": "Puerta del Gobio",
+			"es-es": "Puerta del Gobio",
+			"fr-ca": "Lagune aux gobies",
+			"fr-fr": "Lagune aux gobies",
+			"it": "Padiglione Capitone",
+			"ja": "ムツゴ楼",
+			"nl": "Palingpaviljoen",
+			"ru": "Парк «Во Сток!"
+		}
+	}
+]
