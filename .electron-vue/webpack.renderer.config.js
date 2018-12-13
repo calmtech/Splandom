@@ -43,6 +43,10 @@ let rendererConfig = {
         }
       },
       {
+        test: /\.styl$/,
+        use: ['vue-style-loader', 'css-loader', 'stylus-loader']
+      },
+      {
         test: /\.scss$/,
         use: ['vue-style-loader', 'css-loader', 'sass-loader']
       },
@@ -66,6 +70,10 @@ let rendererConfig = {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.coffee$/,
+        use: 'coffee-loader'
       },
       {
         test: /\.node$/,
@@ -135,7 +143,11 @@ let rendererConfig = {
         : false
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      "window.mathjs": 'mathjs',
+      "window.lodash": 'lodash'
+    })
   ],
   output: {
     filename: '[name].js',

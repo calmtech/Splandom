@@ -11,6 +11,45 @@
     </div>
   </section>
 
+  <section class="player">
+    <div class="hero player">
+      <div class="hero-body">
+        <h2 class="title">プレイヤー</h2>
+      </div>
+    </div>
+
+    <div class="inner players">
+      <div class="columns is-mobile is-multiline">
+        <div class="column is-3" v-for="player in players" :key="player.name">
+          <p>{{ player.name }}</p>
+          <p>{{ player.real_power }}</p>
+          <p>{{ player.rate }}</p>
+        </div>
+      </div>
+
+      <div class="columns is-mobile is-centered">
+        <div class="column is-half">
+          <div class="field is-grouped">
+            <button @click="splandom_team" class="button is-large is-fullwidth">Splandom!</button>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div id="result_team" class="columns is-mobile is-multiline" v-show="result_team != ''">
+          <div class="column is-3" v-for="team in result_team">
+            <ul>
+              <li>{{ team[0].name }}</li>
+              <li>{{ team[1].name }}</li>
+              <li>{{ team[2].name }}</li>
+              <li>{{ team[3].name }}</li>
+              <li>{{ sumRate(team) }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="rule">
     <div class="hero rule">
       <div class="hero-body">
@@ -29,16 +68,17 @@
           </label>
         </div>
       </div>
-
-      <div class="result">
-        <div id="result_rule" v-show="result_rule != ''">{{ result_rule }}</div>
-      </div>
-
+      
       <div class="columns is-mobile is-centered">
         <div class="column is-half">
           <button @click="splandom_rule" class="button is-large is-fullwidth">Splandom!</button>
         </div>
       </div>
+
+      <div class="result">
+        <div id="result_rule" v-show="result_rule != ''">{{ result_rule }}</div>
+      </div>
+
     </div>
   </section>
 
@@ -60,15 +100,15 @@
           </label>
         </div>
       </div>
-      <div class="result">
-        <div id="result_stage" v-show="result_stage != ''">{{ result_stage }}</div>
-      </div>
       <div class="columns is-mobile is-centered">
         <div class="column is-half">
           <div class="field is-grouped">
             <button @click="splandom_stage" class="button is-large is-fullwidth">Splandom!</button>
           </div>
         </div>
+      </div>
+      <div class="result">
+        <div id="result_stage" v-show="result_stage != ''">{{ result_stage }}</div>
       </div>
     </div>
 
@@ -79,14 +119,60 @@
 
 <script>
 import {TweenMax} from 'gsap'
+const _ = window.lodash
+const players = require('./db/players.json')
+const ranks = require('./db/ranks.json')
+
+players.forEach(function (player, i) {
+  let playerPower = []
+  Object.values(player.power).map(power => isNaN(power) ? playerPower.push(ranks[power]) : playerPower.push(power))
+  players[i].max_power = playerPower.reduce((a, b) => a >= b ? a : b)
+  players[i].average_power = playerPower.reduce((sum, power) => parseFloat(sum) + parseFloat(power)) / playerPower.length
+})
+const average = players.map((player) =>
+  player.average_power
+).reduce((sum, power) =>
+  parseFloat(sum) + parseFloat(power)
+) / players.length
+const standardDeviation = Math.sqrt(
+  players.map((player) =>
+    parseFloat(player.average_power)
+  ).map((power) =>
+    (power - average) ** 2
+  ).reduce((prev, current) =>
+    prev + current
+  ) / players.length
+)
+players.forEach(function (player, i) {
+  const max = parseFloat(player.max_power)
+  const average = parseFloat(player.average_power)
+  let realPower = 0
+  let rate = 0
+  if ((max - average) >= standardDeviation) {
+    realPower = Math.round((average + Math.sqrt((max - average) * standardDeviation)) * 10) / 10
+  } else if ((max - average) >= 100) {
+    realPower = Math.round((average + Math.sqrt((max - average) / 4 * standardDeviation)) * 10) / 10
+  } else {
+    realPower = Math.round(average * 10) / 10
+  }
+  rate = Math.floor(realPower / 400 * 10) / 10
+  players[i].real_power = realPower
+  players[i].rate = rate
+})
+players.sort((a, b) => b.real_power - a.real_power)
+
+const teamCount = players.length % 4 === 0 ? players.length / 4 : parseInt(players.length / 4 + 1)
+
 export default {
   name: 'home',
   data () {
     return {
       result_rule: '',
       result_stage: '',
+      result_team: [],
       stages: require('./db/stages.json'),
-      rules: require('./db/rules.json')
+      rules: require('./db/rules.json'),
+      players: players
     }
   },
   methods: {
@@ -116,6 +202,52 @@ export default {
         { fontSize: 0 },
         { fontSize: '6rem' }
       )
+    },
+    splandom_team () {
+      let randomTeam = []
+      do {
+        const groups = _.chunk(players, teamCount).map((group) => _.shuffle(group))
+        randomTeam = []
+        for (let i = 0; i < teamCount; i++) {
+          let team = []
+          groups.forEach(function (group) {
+            team.push(group[i])
+          })
+          randomTeam.push(team)
+        }
+
+        var teamPowers = randomTeam.map((team) =>
+          team.map((player) =>
+            player.rate
+          ).reduce((sum, rate) =>
+            sum + rate
+          )
+        ).sort((a, b) => b - a)
+      }
+      while (teamPowers[0] - teamPowers[teamPowers.length - 1] > 0.2)
+
+      this.result_team = randomTeam
+
+      TweenMax.fromTo('#result_team', 0.5,
+        { fontSize: 0 },
+        { fontSize: '1.5rem' }
+      )
+    },
+    power: function (power) {
+      let stringPower = ''
+      if (isNaN(power)) {
+        stringPower = power
+      } else {
+        stringPower = 'X(' + power + ')'
+      }
+      return stringPower
+    },
+    sumRate: function (team) {
+      return team.map((player) =>
+        parseInt(player.rate * 10)
+      ).reduce((sum, rate) =>
+        sum + rate
+      ) / 10
     }
   }
 }
@@ -143,7 +275,7 @@ section
   padding-right: 0 !important
 
 label
-  font-size: 2rem
+  font-size: 2em
 
 button
   font-size: 2rem !important
@@ -171,11 +303,24 @@ input[type=checkbox]
     text-align: center
     font-size: 6rem
 
+    #result_team
+      font-size: 1.5rem
 
+      ul
+        border: solid 1px $white
+
+        li:last-child
+          border-top: solid 1px $white
   .column
     color: $white
     text-shadow: darken($gray, 20%) 2px 2px
     text-align: center
+
+.hero
+  .hero-body
+    .title, .subtitle
+      color: $white
+      text-shadow: darken($primary, 20%) 2px 2px
 
 .hero.main
   .hero-body
@@ -198,6 +343,10 @@ input[type=checkbox]
     .title, .subtitle
       color: $white
       text-shadow: darken($secondary, 20%) 2px 2px
+
+.players
+  p
+    font-size: 1.5em
 
 .rules
   label

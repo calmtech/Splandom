@@ -1,0 +1,178 @@
+[
+	{
+		"name": "ダディ",
+		"power": {
+			"splat_zones": "2155.9",
+			"tower_control": "2002",
+			"rainmaker": "S+2",
+			"clam_blitz": "S+3"
+		},
+		"style": "A",
+		"position": "M"
+	},
+	{
+		"name": "kumasis",
+		"power": {
+			"splat_zones": "2255.8",
+			"tower_control": "2265.8",
+			"rainmaker": "2213",
+			"clam_blitz": "2061.1"
+		},
+		"style": "D",
+		"position": "B"
+	},
+	{
+		"name": "ヤートン",
+		"power": {
+			"splat_zones": "2033.5",
+			"tower_control": "S+3",
+			"rainmaker": "S+5",
+			"clam_blitz": "S+3"
+		},
+		"style": "A",
+		"position": "M"
+	},
+	{
+		"name": "マミィ",
+		"power": {
+			"splat_zones": "A+",
+			"tower_control": "A",
+			"rainmaker": "A-",
+			"clam_blitz": "A-"
+		},
+		"style": "D",
+		"position": "M"
+	},
+	{
+		"name": "ぴよ",
+		"power": {
+			"splat_zones": "S",
+			"tower_control": "S",
+			"rainmaker": "A+",
+			"clam_blitz": "S+1"
+		},
+		"style": "A",
+		"position": "F"
+	},
+	{
+		"name": "みぐのーべる",
+		"power": {
+			"splat_zones": "S",
+			"tower_control": "A+",
+			"rainmaker": "A+",
+			"clam_blitz": "A+"
+		},
+		"style": "A",
+		"position": "F"
+	},
+	{
+		"name": "あおもりねぶた",
+		"power": {
+			"splat_zones": "S+0",
+			"tower_control": "S+0",
+			"rainmaker": "S+0",
+			"clam_blitz": "S+0"
+		},
+		"style": "D",
+		"position": "B"
+	},
+	{
+		"name": "おーみん",
+		"power": {
+			"splat_zones": "A+",
+			"tower_control": "A+",
+			"rainmaker": "A+",
+			"clam_blitz": "A+"
+		},
+		"style": "A",
+		"position": "M"
+	},
+	{
+		"name": "かるふぁ",
+		"power": {
+			"splat_zones": "S+0",
+			"tower_control": "S",
+			"rainmaker": "S+0",
+			"clam_blitz": "S"
+		},
+		"style": "A",
+		"position": "M"
+	},
+	{
+		"name": "ゆーかり",
+		"power": {
+			"splat_zones": "A+",
+			"tower_control": "A",
+			"rainmaker": "A",
+			"clam_blitz": "A"
+		},
+		"style": "A",
+		"position": "F"
+	},
+	{
+		"name": "すねげ",
+		"power": {
+			"splat_zones": "2100",
+			"tower_control": "S+4",
+			"rainmaker": "S+0",
+			"clam_blitz": "A-"
+		},
+		"style": "A",
+		"position": "F"
+	},
+	{
+		"name": "ももはる",
+		"power": {
+			"splat_zones": "2400",
+			"tower_control": "S+3",
+			"rainmaker": "S+0",
+			"clam_blitz": "S+6"
+		},
+		"style": "D",
+		"position": "M"
+	},
+	{
+		"name": "アセロラ",
+		"power": {
+			"splat_zones": "2244",
+			"tower_control": "S+2",
+			"rainmaker": "2000",
+			"clam_blitz": "S"
+		},
+		"style": "A",
+		"position": "F"
+	},
+	{
+		"name": "ナカムー",
+		"power": {
+			"splat_zones": "2000",
+			"tower_control": "S+4",
+			"rainmaker": "S+1",
+			"clam_blitz": "S+2"
+		},
+		"style": "A",
+		"position": "F"
+	},
+	{
+		"name": "くるぶしブルー",
+		"power": {
+			"splat_zones": "B-",
+			"tower_control": "B-",
+			"rainmaker": "B",
+			"clam_blitz": "B-"
+		},
+		"style": "A",
+		"position": "M"
+	},
+	{
+		"name": "ゲスいた",
+		"power": {
+			"splat_zones": "S+0",
+			"tower_control": "S+0",
+			"rainmaker": "S+0",
+			"clam_blitz": "S+0"
+		},
+		"style": "D",
+		"position": "M"
+	}
+]
