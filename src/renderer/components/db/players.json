@@ -3,9 +3,9 @@
 		"name": "ダディ",
 		"power": {
 			"splat_zones": "2155.9",
-			"tower_control": "2002",
-			"rainmaker": "S+2",
-			"clam_blitz": "S+3"
+			"tower_control": "S+9",
+			"rainmaker": "S+3",
+			"clam_blitz": "S+4"
 		},
 		"style": "A",
 		"position": "M"
@@ -24,7 +24,7 @@
 	{
 		"name": "ヤートン",
 		"power": {
-			"splat_zones": "2033.5",
+			"splat_zones": "S+8",
 			"tower_control": "S+3",
 			"rainmaker": "S+5",
 			"clam_blitz": "S+3"
@@ -46,9 +46,9 @@
 	{
 		"name": "ぴよ",
 		"power": {
-			"splat_zones": "S",
-			"tower_control": "S",
-			"rainmaker": "A+",
+			"splat_zones": "S+0",
+			"tower_control": "S+0",
+			"rainmaker": "S+1",
 			"clam_blitz": "S+1"
 		},
 		"style": "A",
@@ -57,7 +57,7 @@
 	{
 		"name": "みぐのーべる",
 		"power": {
-			"splat_zones": "S",
+			"splat_zones": "A+",
 			"tower_control": "A+",
 			"rainmaker": "A+",
 			"clam_blitz": "A+"
@@ -80,7 +80,7 @@
 		"name": "おーみん",
 		"power": {
 			"splat_zones": "A+",
-			"tower_control": "A+",
+			"tower_control": "S",
 			"rainmaker": "A+",
 			"clam_blitz": "A+"
 		},

@@ -5,7 +5,7 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="title">Splandom!</h1>
-          <p class="subtitle">ルール＆ステージ ランダム決定 for スプラトゥーン2</p>
+          <p class="subtitle">Team, Rule, Stage randomizer for Splatoon 2</p>
         </div>
       </div>
     </div>
@@ -15,6 +15,7 @@
     <div class="hero player">
       <div class="hero-body">
         <h2 class="title">プレイヤー</h2>
+        <p class="subtitle"><router-link to="/entry">プレイヤーはテキストを貼り付けて一括登録できます</router-link></p>
       </div>
     </div>
 
@@ -35,15 +36,46 @@
         </div>
       </div>
       <div class="result">
+        <div class="notes columns is-mobile is-multiline is-centered">
+          <div class="column is-6">
+            <p>
+              <span class="item"><i>F</i>マエ</span>
+              <spna class="item"><i>M</i>マンナカ</spna>
+              <span class="item"><i>B</i>ウシロ</span>
+            </p>
+            <p>
+              <span class="item"><i>A</i>コウゲキ</span>
+              <span class="item"><i>D</i>ボウギョ</span>
+            </p>
+          </div>
+        </div>
         <div id="result_team" class="columns is-mobile is-multiline" v-show="result_team != ''">
           <div class="column is-3" v-for="team in result_team">
-            <ul>
-              <li>{{ team[0].name }}</li>
-              <li>{{ team[1].name }}</li>
-              <li>{{ team[2].name }}</li>
-              <li>{{ team[3].name }}</li>
-              <li>{{ sumRate(team) }}</li>
-            </ul>
+            <table>
+              <tr>
+                <td class="name">{{ team[0].name }}</td>
+                <td class="position">{{ team[0].position }}</td>
+                <td class="style">{{ team[0].style }}</td>
+              </tr>
+              <tr>
+                <td class="name">{{ team[1].name }}</td>
+                <td class="position">{{ team[1].position }}</td>
+                <td class="style">{{ team[1].style }}</td>
+              </tr>
+              <tr>
+                <td class="name">{{ team[2].name }}</td>
+                <td class="position">{{ team[2].position }}</td>
+                <td class="style">{{ team[2].style }}</td>
+              </tr>
+              <tr>
+                <td class="name">{{ team[3].name }}</td>
+                <td class="position">{{ team[3].position }}</td>
+                <td class="style">{{ team[3].style }}</td>
+              </tr>
+              <tr>
+                <td colspan="3" class="summary">{{ sumRate(team) }}</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
@@ -228,9 +260,9 @@ export default {
 
       this.result_team = randomTeam
 
-      TweenMax.fromTo('#result_team', 0.5,
+      TweenMax.fromTo('#result_team table', 0.5,
         { fontSize: 0 },
-        { fontSize: '1.5rem' }
+        { fontSize: '2rem' }
       )
     },
     power: function (power) {
@@ -286,9 +318,11 @@ input[type=checkbox]
 
   &:checked + img
     filter: grayscale(100%)
+    opacity: .5
 
   &:checked ~ span
     text-shadow: darken($gray, 20%) 2px 2px
+    color: $gray
   
 
 .inner
@@ -305,16 +339,32 @@ input[type=checkbox]
 
     #result_team
       font-size: 1.5rem
+      table
+        width: 100%
+        collapse: table-collapse
+        font-size: 2rem
+        td
+          border: solid 1px $white
+          padding: .5em
 
-      ul
-        border: solid 1px $white
-
-        li:last-child
-          border-top: solid 1px $white
+          &.position, &.style, &.summary
+            text-align: center
   .column
     color: $white
     text-shadow: darken($gray, 20%) 2px 2px
     text-align: center
+
+.notes
+  font-size: 1.25rem
+  .item
+    display: inline-block
+    margin-right: 1em
+    i
+      display: inline-block
+      margin-right: .5em
+      font-style: normal
+      &:after
+        content: " :"
 
 .hero
   .hero-body
@@ -329,6 +379,10 @@ input[type=checkbox]
       text-shadow: darken($gray, 20%) 2px 2px
     .title
       font-size: 3rem
+
+.hero.player
+  .hero-body
+    background-color: adjust-hue($primary, 135deg)
 
 .hero.rule
   .hero-body
@@ -346,7 +400,9 @@ input[type=checkbox]
 
 .players
   p
-    font-size: 1.5em
+    font-size: 2rem
+  .result
+    min-height: 36rem
 
 .rules
   label
