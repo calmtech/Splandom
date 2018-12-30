@@ -1,11 +1,34 @@
 <template>
-<div class="section">
+<div class="section has-navbar-fixed-top">
+  <nav class="navbar is-fixed-top is-light">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img :src="'static/img/logo.png'" alt="Splandom: Randomizer for Splatoon2" height="100%">
+      </a>
+      <div @click="burger" class="navbar-burger burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-item">
+        <router-link class="navbar-item" to="/">ルール＆ステージ</router-link>
+      </div>
+      <div class="navbar-item">
+        <router-link class="navbar-item" to="/entry">プレイヤー登録＆チーム分け</router-link>
+      </div>
+    </div>
+
+  </nav>
+
   <section class="main">
     <div class="hero main">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">Splandom!</h1>
-          <p class="subtitle">Team, Rule, Stage randomizer for Splatoon 2</p>
+          <p class="subtitle">Randomizer for Splatoon 2</p>
         </div>
       </div>
     </div>
@@ -15,7 +38,7 @@
     <div class="hero entry">
       <div class="hero-body">
         <h2 class="title">プレイヤー登録</h2>
-        <p class="subtitle"><router-link to="/">登録プレイヤーはウデマエを元にチーム分けされます</router-link></p>
+        <p class="subtitle">プレイヤーはウデマエを元にチーム分けされます</p>
       </div>
     </div>
 
@@ -271,6 +294,13 @@ export default {
       ).reduce((sum, rate) =>
         sum + rate
       ) / 10
+    },
+    burger () {
+      const nav = document.querySelector('.navbar-burger')
+      const target = nav.dataset.target
+      const targetOn = document.getElementById(target)
+      nav.classList.toggle('is-active')
+      targetOn.classList.toggle('is-active')
     }
   }
 }
