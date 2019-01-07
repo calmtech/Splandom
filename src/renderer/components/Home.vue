@@ -35,7 +35,7 @@
   </section>
 
   <section class="rule">
-    <div class="hero rule">
+    <div class="hero rule primary">
       <div class="hero-body">
         <h2 class="title">ルール</h2>
         <p class="subtitle">チェックを入れたルールは含まれません</p>
@@ -66,7 +66,7 @@
   </section>
 
   <section class="stage">
-    <div class="hero stage">
+    <div class="hero stage secondary">
       <div class="hero-body">
         <h2 class="title">ステージ</h2>
         <p class="subtitle">チェックを入れたステージは含まれません</p>
@@ -156,6 +156,7 @@ export default {
 
 $primary: #64D343
 $secondary: #DC417D
+$tertiary: adjust-hue($primary, 135deg)
 $white: #fff
 $gray: #ccc
 
@@ -231,39 +232,26 @@ input[type=checkbox]
   .hero-body
     .title, .subtitle
       color: $white
-      text-shadow: darken($primary, 20%) 2px 2px
+      text-shadow: darken($gray, 40%) 2px 2px
 
 .hero.main
   .hero-body
-    .title, .subtitle
-      color: $white
-      text-shadow: darken($gray, 20%) 2px 2px
     .title
       font-size: 3rem
 
-.hero.player
-  .hero-body
-    background-color: adjust-hue($primary, 135deg)
-
-.hero.rule
+.hero.primary
   .hero-body
     background-color: $primary
     .title, .subtitle
       color: $white
       text-shadow: darken($primary, 20%) 2px 2px
 
-.hero.stage
+.hero.secondary
   .hero-body
     background-color: $secondary
     .title, .subtitle
       color: $white
       text-shadow: darken($secondary, 20%) 2px 2px
-
-.players
-  p
-    font-size: 2rem
-  .result
-    min-height: 36rem
 
 .rules
   label

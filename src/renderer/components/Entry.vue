@@ -35,7 +35,7 @@
   </section>
 
   <section class="entry">
-    <div class="hero entry">
+    <div class="hero entry primary">
       <div class="hero-body">
         <h2 class="title">プレイヤー登録</h2>
         <p class="subtitle">プレイヤーはウデマエを元にチーム分けされます</p>
@@ -316,6 +316,7 @@ export default {
 
 $primary: #64D343
 $secondary: #DC417D
+$tertiary: adjust-hue($primary, 135deg)
 $white: #fff
 $gray: #ccc
 
@@ -401,28 +402,21 @@ input[type=checkbox]
   .hero-body
     .title, .subtitle
       color: $white
-      text-shadow: darken($primary, 20%) 2px 2px
+      text-shadow: darken($gray, 40%) 2px 2px
 
 .hero.main
   .hero-body
-    .title, .subtitle
-      color: $white
-      text-shadow: darken($gray, 20%) 2px 2px
     .title
       font-size: 3rem
 
-.hero.player
-  .hero-body
-    background-color: adjust-hue($primary, 135deg)
-
-.hero.rule
+.hero.primary
   .hero-body
     background-color: $primary
     .title, .subtitle
       color: $white
       text-shadow: darken($primary, 20%) 2px 2px
 
-.hero.stage
+.hero.secondary
   .hero-body
     background-color: $secondary
     .title, .subtitle
