@@ -1,6 +1,6 @@
 {
-  "name": "splandom",
-  "productName": "splandom",
+  "name": "Splandom",
+  "productName": "Splandom",
   "version": "0.0.1",
   "author": "CalmTech <masayak@calmtech.net>",
   "description": "An electron-vue project",

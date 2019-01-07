@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'splandom'
+    name: 'Splandom'
   }
 </script>
 
