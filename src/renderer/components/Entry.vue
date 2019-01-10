@@ -187,7 +187,7 @@ export default {
     entryPlayers: function () {
       const ranks = require('./db/ranks.json')
       let playerList = []
-      for (let row of this.entry.split(/\r\n|\r|\n/)) {
+      for (let row of this.entry.trim().split(/\r\n|\r|\n/)) {
         const delim = this.delimeter === 'TAB' ? /\t/ : this.delimeter
         const field = row.split(delim)
         const player = {
