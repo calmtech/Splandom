@@ -136,7 +136,7 @@
         </div>
       </div>
       <div class="result">
-        <div id="result_team" class="columns is-mobile is-multiline is-centered" v-show="result_team != ''">
+        <div id="result_team" class="columns is-mobile is-multiline" v-show="result_team != ''">
           <div class="column is-4" v-for="team in result_team" v-bind:key="team">
             <table>
               <tr>
