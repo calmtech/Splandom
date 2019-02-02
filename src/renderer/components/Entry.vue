@@ -180,7 +180,8 @@ export default {
       delimeter: 'TAB',
       entry: '',
       result_team: [],
-      players: []
+      players: [],
+      countMax: 100
     }
   },
   methods: {
@@ -251,6 +252,7 @@ export default {
     },
     splandom_team () {
       let randomTeam = []
+      let randomizeCount = 0
       const teamCount = this.players.length % 4 === 0 ? this.players.length / 4 : parseInt(this.players.length / 4 + 1)
       do {
         const groups = _.chunk(this.players, teamCount).map((group) => _.shuffle(group))
@@ -270,6 +272,10 @@ export default {
             sum + rate
           )
         ).sort((a, b) => b - a)
+        randomizeCount++
+        if (randomizeCount > this.countMax) {
+          break
+        }
       }
       while (teamPowers[0] - teamPowers[teamPowers.length - 1] > 0.2)
 
