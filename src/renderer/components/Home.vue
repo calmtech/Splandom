@@ -2,8 +2,10 @@
 <div class="section has-navbar-fixed-top">
   <nav class="navbar is-fixed-top is-light">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img :src="'static/img/logo.png'" alt="Splandom: Randomizer for Splatoon2" height="100%">
+      <a class="navbar-item" href="#">
+        <router-link to="/">
+          <img :src="'static/img/logo.png'" alt="Splandom: Randomizer for Splatoon2" height="100%">
+        </router-link>
       </a>
       <div @click="burger" class="navbar-burger burger" data-target="navMenu">
         <span></span>

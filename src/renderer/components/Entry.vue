@@ -2,8 +2,10 @@
 <div class="section has-navbar-fixed-top">
   <nav class="navbar is-fixed-top is-light">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img :src="'static/img/logo.png'" alt="Splandom: Randomizer for Splatoon2" height="100%">
+      <a class="navbar-item" href="#">
+        <router-link to="/">
+          <img :src="'static/img/logo.png'" alt="Splandom: Randomizer for Splatoon2" height="100%">
+        </router-link>
       </a>
       <div @click="burger" class="navbar-burger burger" data-target="navMenu">
         <span></span>
@@ -137,7 +139,7 @@
       </div>
       <div class="result">
         <div id="result_team" class="columns is-mobile is-multiline" v-show="result_team != ''">
-          <div class="column is-4" v-for="team in result_team" v-bind:key="team">
+          <div class="column is-6" v-for="team in result_team" v-bind:key="team">
             <table>
               <tr>
                 <td class="name">{{ team[0].name }}</td>
