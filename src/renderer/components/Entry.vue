@@ -115,7 +115,7 @@
   </section>
 
   <section class="player" v-if="players != ''">
-    <div class="hero player">
+    <div class="hero player secondary">
       <div class="hero-body">
         <h2 class="title">プレイヤー</h2>
       </div>
@@ -123,10 +123,25 @@
 
     <div class="inner players">
       <div class="columns is-mobile is-multiline">
-        <div class="column is-3" v-for="player in players" :key="player.name">
-          <p>{{ player.name }}</p>
-          <p>{{ player.real_power }}</p>
-          <p>{{ player.rate }}</p>
+        <div class="column is-full">
+          <table>
+            <tr>
+              <th>No.</th>
+              <th>ナマエ</th>
+              <th>Max</th>
+              <th>Avg</th>
+              <th>Real</th>
+              <th>Rate</th>
+            </tr>
+            <tr v-for="(player, i) in players" :key="player.name">
+              <td class="has-text-right">{{ i + 1 }}</td>
+              <td>{{ player.name }}</td>
+              <td class="has-text-right">{{ player.max_power }}</td>
+              <td class="has-text-right">{{ player.average_power }}</td>
+              <td class="has-text-right">{{ player.real_power }}</td>
+              <td class="has-text-right">{{ player.rate }}</td>
+            </tr>
+          </table>
         </div>
       </div>
 
@@ -137,37 +152,65 @@
           </div>
         </div>
       </div>
-      <div class="result">
+    </div>
+  </section>
+
+  <section class="team" v-if="players != ''">
+    <div class="hero team tertiary">
+      <div class="hero-body">
+        <h2 class="title">チーム</h2>
+      </div>
+
+      <div class="inner teams">
         <div id="result_team" class="columns is-mobile is-multiline" v-show="result_team != ''">
-          <div class="column is-6" v-for="team in result_team" v-bind:key="team">
+          <div class="column is-full" v-for="(team, i) in result_team" v-bind:key="team">
             <table>
               <tr>
+                <th class="has-text-white">Team {{ i + 1 }}</th>
+                <th class="has-text-white">Max</th>
+                <th class="has-text-white">Avg</th>
+                <th class="has-text-white">Real</th>
+                <th class="has-text-white">Rate</th>
+              </tr>
+              <tr>
                 <td class="name">{{ team[0].name }}</td>
-                <td class="real_power">{{ team[0].real_power }}</td>
+                <td class="has-text-right">{{ team[0].max_power }}</td>
+                <td class="has-text-right">{{ team[0].average_power }}</td>
+                <td class="has-text-right">{{ team[0].real_power }}</td>
                 <td class="rate">{{ team[0].rate }}</td>
               </tr>
               <tr>
                 <td class="name">{{ team[1].name }}</td>
-                <td class="real_power">{{ team[1].real_power }}</td>
+                <td class="has-text-right">{{ team[1].max_power }}</td>
+                <td class="has-text-right">{{ team[1].average_power }}</td>
+                <td class="has-text-right">{{ team[1].real_power }}</td>
                 <td class="rate">{{ team[1].rate }}</td>
               </tr>
               <tr>
                 <td class="name">{{ team[2].name }}</td>
-                <td class="real_power">{{ team[2].real_power }}</td>
+                <td class="has-text-right">{{ team[2].max_power }}</td>
+                <td class="has-text-right">{{ team[2].average_power }}</td>
+                <td class="has-text-right">{{ team[2].real_power }}</td>
                 <td class="rate">{{ team[2].rate }}</td>
               </tr>
               <tr>
                 <td class="name">{{ team[3].name }}</td>
-                <td class="real_power">{{ team[3].real_power }}</td>
+                <td class="has-text-right">{{ team[3].max_power }}</td>
+                <td class="has-text-right">{{ team[3].average_power }}</td>
+                <td class="has-text-right">{{ team[3].real_power }}</td>
                 <td class="rate">{{ team[3].rate }}</td>
               </tr>
               <tr>
-                <td colspan="3" class="summary">{{ sumRate(team) }}</td>
+                <td colspan="5" class="summary has-text-centered">{{ sumRate(team) }}</td>
               </tr>
             </table>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="inner teams">
+
     </div>
   </section>
 </div>
@@ -209,7 +252,7 @@ export default {
           return isNaN(power) ? ranks[power] : power
         })
         player.max_power = parseFloat(playerPower.reduce((a, b) => a >= b ? a : b))
-        player.average_power = playerPower.reduce((sum, power) => parseFloat(sum) + parseFloat(power)) / playerPower.length
+        player.average_power = Math.round(playerPower.reduce((sum, power) => parseFloat(sum) + parseFloat(power)) / playerPower.length * 10) / 10
         return player
       })
       const average = playerList.map((player) =>
@@ -226,18 +269,13 @@ export default {
           prev + current
         ) / playerList.length
       )
+
       playerList = playerList.map(function (player) {
         const max = parseFloat(player.max_power)
         const average = parseFloat(player.average_power)
         let realPower = 0
         let rate = 0
-        if ((max - average) >= standardDeviation) {
-          realPower = Math.round((average + Math.sqrt((max - average) * standardDeviation)) * 10) / 10
-        } else if ((max - average) >= 100) {
-          realPower = Math.round((average + Math.sqrt((max - average) / 4 * standardDeviation)) * 10) / 10
-        } else {
-          realPower = Math.round(average * 10) / 10
-        }
+        realPower = Math.round((max - Math.sqrt((max - average) / 4 * standardDeviation) / 2) * 10) / 10
         rate = Math.floor(realPower / 400 * 10) / 10
         player.real_power = realPower
         player.rate = rate
@@ -345,16 +383,19 @@ button
   font-size: 2rem !important
   font-family: 'Splatfont 2' !important
 
-input[type=checkbox]
-  opacity: 0
+table
+  width: 100%
+  collapse: table-collapse
+  font-size: 1.5rem
 
-  &:checked + img
-    filter: grayscale(100%)
-    opacity: .5
+  th
+    padding: .25em .5em
+  td
+    border: solid 1px $white
+    padding: .25em .5em
 
-  &:checked ~ span
-    text-shadow: darken($gray, 20%) 2px 2px
-    color: $gray
+    &.rate, &.real_power
+      text-align: right
 
 .inner
   background: url('../assets/images/top_sec01_bg.png') left top no-repeat
@@ -367,19 +408,7 @@ input[type=checkbox]
     min-height: 10rem
     text-align: center
     font-size: 6rem
-
-    #result_team
-      font-size: 1.5rem
-      table
-        width: 100%
-        collapse: table-collapse
-        td
-          font-size: 1.5rem
-          border: solid 1px $white
-          padding: .25em .5em
-
-          &.rate, &.real_power
-            text-align: right
+    
   .column
     color: $white
     text-shadow: darken($gray, 20%) 2px 2px
@@ -432,11 +461,18 @@ input[type=checkbox]
       color: $white
       text-shadow: darken($secondary, 20%) 2px 2px
 
+.hero.tertiary
+  .hero-body
+    background-color: $tertiary
+    .title, .subtitle
+      color: $white
+      text-shadow: darken($tertiary, 20%) 2px 2px
+
 .players
-  p
-    font-size: 2rem
-  .result
-    min-height: 36rem
+  th
+    font-size: 1.5rem
+    color: $white
+    padding-left: 1rem
 
 .rules
   label
@@ -446,13 +482,6 @@ input[type=checkbox]
     color: $primary
     text-shadow: $white 2px 2px
 
-.stages
-  label
-    span
-      text-shadow: darken($secondary, 20%) 2px 2px
-  .result
-    color: $secondary
-    text-shadow: $white 2px 2px
 .entry
   textarea
     width: 100%
